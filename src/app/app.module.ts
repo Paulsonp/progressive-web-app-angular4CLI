@@ -9,6 +9,7 @@ import { MdButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdMenuModule } from '@angular/material';
 import { MdIconModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +36,8 @@ import { AppComponent } from './app.component';
     SharedModule,
     AppRoutingModule,
     HomeModule,
-    AboutModule
+    AboutModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

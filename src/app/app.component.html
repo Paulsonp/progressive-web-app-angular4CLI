@@ -1,3 +1,108 @@
-<sd-toolbar></sd-toolbar>
-<sd-navbar></sd-navbar>
-<router-outlet></router-outlet>
+<!--<md-sidenav-container class="example-container">
+    <md-toolbar  >
+        <button md-button>
+        <md-icon (click)="sidenav.open()">menu</md-icon>
+    </button>
+
+        <span>Yay, Material in Angular 2!</span>
+
+        <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    </md-toolbar>
+    <md-menu x-position="before" #menu="mdMenu">
+        <button md-menu-item>Option 1</button>
+        <button md-menu-item>Option 2</button>
+    </md-menu>
+    <nav>
+        <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+        <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">ABOUT</a>
+    </nav>
+    <md-sidenav #sidenav class="example-sidenav">
+        Jolly good!
+    </md-sidenav>
+
+    <router-outlet></router-outlet>
+</md-sidenav-container>-->
+
+<md-sidenav-container fullscreen>
+    <md-toolbar color="primary">
+        <div fxFlex="100%" fxLayoutAlign="space-between center" style="box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.13), 0 1px 2px 0 rgba(0, 0, 0, 0.24);">
+            <div class="marginRight-logo">
+                <button md-button class="admin_name" (click)="sidenav.open()">
+                    <md-icon class="site-logo" >
+                        menu
+                    </md-icon>
+                </button>
+            </div>
+
+            <div class="admin_details" fxLayout="row">
+                <p fxHide.xs class="person">Paulson Ps</p>
+                <md-icon class="user_icon" [mdMenuTriggerFor]="menu">
+                    account_circle
+                </md-icon>
+                <md-menu #menu="mdMenu">
+                    <button md-menu-item style="font-size: 12px;">
+                    Account
+                    </button>
+                    <button md-menu-item style="font-size: 12px;">Logout</button>
+                </md-menu>
+            </div>
+        </div>
+    </md-toolbar>
+
+    <md-sidenav #sidenav mode="over" class="app-sidenav">
+        <div fxLayout="row" class="logo-div">
+
+            <!--<p class="admin_name" style="font-size:16px;padding-left: 1.1em;">
+                <img src="image/sherlock-logo_F9_sm.png">
+            </p>-->
+        </div>
+
+        <md-list class="md-list" style="padding-top: 0px; position: relative;
+    left: -2.5em;width:290px;">
+            <nav class="vertical">
+                <ul>
+                    <li>
+                        <md-list-item [routerLink]="['/']" [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:true}">
+                            <md-icon class="linkIcon1">
+                                home
+                            </md-icon>
+                            <h4 style="margin-left: 23px;">Home</h4>
+                        </md-list-item>
+                    </li>
+
+                    <li>
+                        <md-list-item [routerLink]="['/about']" [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:true}">
+                            <md-icon class="linkIcon1">
+                                settings
+                            </md-icon>
+                            <h4 style="padding-left: 2px;">About</h4>
+                        </md-list-item>
+                    </li>
+                    <li id="drop-down" class="square">
+                        <md-list-item>
+                            <md-icon class="linkIcon1">
+                                settings
+                            </md-icon>
+                            <h4>Settings</h4>
+                        </md-list-item>
+                    </li>
+                    <li>
+                        <md-list-item>
+                            <md-icon class="linkIcon1 disabled">
+                                info
+                            </md-icon>
+                            <h4>Status</h4>
+                        </md-list-item>
+                    </li>
+                </ul>
+            </nav>
+        </md-list>
+
+    </md-sidenav>
+    <div>
+        <router-outlet>
+        </router-outlet>
+    </div>
+</md-sidenav-container>
