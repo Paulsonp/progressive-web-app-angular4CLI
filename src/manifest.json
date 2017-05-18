@@ -16,5 +16,5 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "orientation": "portrait",
-    "start_url": "./?utm_source=web_app_manifest"
+    "start_url": "https://paulsonp.github.io/progressive-web-app-angular4CLI/"
 }
